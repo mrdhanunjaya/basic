@@ -9,7 +9,7 @@ pool:
   vmImage: ubuntu-latest
 strategy:
   matrix:
-     pythonVersion: '3.9'
+     pythonVersion: '3.7'
 
 steps:
     - task: UsePythonVersion@0
