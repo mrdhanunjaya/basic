@@ -5,34 +5,13 @@
 
 trigger:
 - main
+pool:
+  vmImage: ubuntu-latest
+strategy:
+  matrix:
+     pythonVersion: '3.9'
 
-#variables:
-  # Azure Resource Manager connection created during pipeline creation
-  #azureServiceConnectionId: 'b697e0ce-27ba-4812-94dc-3dafac418ffb'
-
-  # Web app name
-  #webAppName: 'applicationbuild'
-
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
-  # Environment name
-  #environmentName: 'applicationbuild'
-
-  # Project root folder. Point to the folder containing manage.py file.
-  projectRoot: $(System.DefaultWorkingDirectory)
-
-  # Python version: 3.7
-  pythonVersion: '3.7'
-
-stages:
-- stage: Build
-  displayName: Build stage
-  jobs:
-  - job: BuildJob
-    pool:
-      vmImage: $(vmImageName)
-    steps:
+steps:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '$(pythonVersion)'
@@ -41,3 +20,5 @@ stages:
     - script: |
         python sample.py
       displayName: "Install requirements"
+    
+ 
