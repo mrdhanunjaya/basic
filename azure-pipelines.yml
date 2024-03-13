@@ -6,9 +6,9 @@
 trigger:
 - main
 
-variables:
+#variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'b697e0ce-27ba-4812-94dc-3dafac418ffb'
+  #azureServiceConnectionId: 'b697e0ce-27ba-4812-94dc-3dafac418ffb'
 
   # Web app name
   webAppName: 'applicationbuild'
@@ -40,5 +40,4 @@ stages:
 
     - script: |
         python sample.py
-      workingDirectory: $(projectRoot)
       displayName: "Install requirements"
