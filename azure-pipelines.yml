@@ -11,13 +11,13 @@ trigger:
   #azureServiceConnectionId: 'b697e0ce-27ba-4812-94dc-3dafac418ffb'
 
   # Web app name
-  webAppName: 'applicationbuild'
+  #webAppName: 'applicationbuild'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'applicationbuild'
+  #environmentName: 'applicationbuild'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
